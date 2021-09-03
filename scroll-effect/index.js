@@ -1,3 +1,5 @@
+const direction = parseInt(new URL(window.location).searchParams.get('d'))
+
 const scroll3d = block => {
     const oldItems = block.querySelectorAll('section.scroll-3d > section.item'),
     drawer = block.querySelector('div.drawer > div'),
@@ -42,7 +44,7 @@ const scroll3d = block => {
         now = Math.round(num);
         items.forEach((e,i)=>{
             let n = num-i;
-            e.style = `--z:${-n};--y:${n};
+            e.style = `--z:${-n*direction};--y:${n*direction};
                 --o:${clamp(n>0?1-n*.5:n+1,0,1)};
                 --b:${clamp(n<0? -n*.5:n*n,0,1)};
                 --n:${num};
