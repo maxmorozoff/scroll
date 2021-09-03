@@ -98,7 +98,11 @@ section.scroll-3d > div.drawer > div > section.item {
     --o: 1;
     --b: 0;
 
-    transform: translateZ(calc(var(--z) * var(--zm))) translateY(calc(var(--y) * var(--ym))) scale(var(--s, 1));
+    transform: translateZ(calc(var(--z) * var(--zm))) 
+        translateY(calc(var(--y) * var(--ym))) 
+        scale(var(--s, 1))
+        rotateX(var(--r, 0));
+    /* transition: transform .051s ease-in-out; */
     filter: blur(calc(var(--b) * var(--bm)));
     opacity: var(--o);
 }
