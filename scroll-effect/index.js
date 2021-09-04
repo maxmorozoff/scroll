@@ -1,4 +1,4 @@
-const direction = parseInt(new URL(window.location).searchParams.get('d'))
+const direction = parseInt(new URL(window.location).searchParams.get('d')??1)
 
 const scroll3d = block => {
     const oldItems = block.querySelectorAll('section.scroll-3d > section.item'),
